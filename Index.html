@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Happy Birthday Seher | Maggi Lover Edition</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0b1a2e, #1c2f44, #2c3e4e);
+      font-family: 'Segoe UI', 'Poppins', 'Comic Neue', system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1.5rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* floating Maggi noodles background effect */
+    .maggi-noodle {
+      position: fixed;
+      bottom: -50px;
+      font-size: 28px;
+      pointer-events: none;
+      z-index: 0;
+      animation: riseNoodle linear infinite;
+      opacity: 0.5;
+    }
+
+    @keyframes riseNoodle {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* main card */
+    .birthday-card {
+      max-width: 950px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(3px);
+      border-radius: 70px 70px 65px 65px;
+      overflow: hidden;
+      box-shadow: 0 40px 60px rgba(0, 0, 0, 0.25), 0 0 0 8px #ffecb3, 0 0 0 15px #ffb7c5;
+      z-index: 10;
+      animation: floatIn 0.6s ease-out;
+    }
+
+    @keyframes floatIn {
+      0% { opacity: 0; transform: translateY(40px) scale(0.96); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* header - fixed spacing no overlap */
+    .rainbow-header {
+      background: linear-gradient(120deg, #ff9a9e, #fad0c4, #ffd1ff, #a1c4fd, #c2e9fb);
+      background-size: 200% 200%;
+      animation: rainbowShift 6s ease infinite;
+      padding: 1.8rem 1.5rem 1.6rem;
+      text-align: center;
+      color: white;
+      text-shadow: 2px 2px 0 #c45a7a;
+      border-bottom-left-radius: 55px;
+      border-bottom-right-radius: 55px;
+    }
+
+    @keyframes rainbowShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .rainbow-header h1 {
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      font-weight: 800;
+      background: rgba(0, 0, 0, 0.2);
+      display: inline-block;
+      padding: 5px 22px;
+      border-radius: 60px;
+      margin-bottom: 12px;
+    }
+
+    .name-block {
+      margin: 10px 0 8px;
+    }
+
+    .glow-name {
+      font-size: 4rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #FFF9C4, #FFE0B5, #FFB347);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 12px #ffd966;
+      letter-spacing: 3px;
+      display: inline-block;
+      padding: 0 10px;
+    }
+
+    .date-rainbow {
+      background: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 8px 30px;
+      border-radius: 60px;
+      font-weight: bold;
+      font-size: 1.25rem;
+      color: #e35f8b;
+      margin: 12px 0 8px;
+      box-shadow: 0 5px 0 #ffbfd5;
+    }
+
+    .sister-tag {
+      background: #fdf4dc;
+      display: inline-block;
+      padding: 7px 26px;
+      border-radius: 50px;
+      font-weight: 700;
+      color: #dd6b92;
+      margin-top: 6px;
+      font-size: 1rem;
+    }
+
+    .content {
+      padding: 1.8rem 2rem 2rem;
+    }
+
+    .wish-card {
+      background: linear-gradient(145deg, #FFF3E9, #FFE9F0);
+      border-radius: 55px;
+      padding: 1.6rem;
+      text-align: center;
+      margin-bottom: 1.8rem;
+      border: 2px solid #ffcfdf;
+    }
+
+    .wish-card p {
+      font-size: 1.2rem;
+      line-height: 1.45;
+      color: #2d1c22;
+      font-weight: 500;
+    }
+
+    .emoji-rain {
+      font-size: 1.8rem;
+      letter-spacing: 8px;
+      margin: 8px 0;
+    }
+
+    .money-line-fun {
+      background: #ffecb3;
+      padding: 10px 20px;
+      border-radius: 60px;
+      display: inline-block;
+      margin-top: 14px;
+      font-weight: 600;
+      color: #b95777;
+      font-size: 0.95rem;
+      border: 2px dashed #ff9eb5;
+    }
+
+    /* Cake + candle */
+    .cake-zone {
+      background: #fff6e8;
+      border-radius: 60px;
+      padding: 20px 15px;
+      margin: 20px 0 20px;
+      text-align: center;
+      box-shadow: 0 12px 20px rgba(0,0,0,0.05);
+      border: 2px solid #ffe0b5;
+    }
+
+    .cake-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #ba6b3e;
+      margin-bottom: 15px;
+    }
+
+    .cake-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .cake-canvas {
+      background: #fbe5c2;
+      border-radius: 50px;
+      padding: 20px 25px;
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+
+    .candle-area {
+      display: flex;
+      justify-content: center;
+      margin-bottom: -8px;
+      position: relative;
+    }
+
+    .candle {
+      width: 18px;
+      height: 55px;
+      background: linear-gradient(145deg, #ffb347, #ff8c42);
+      border-radius: 20px 20px 6px 6px;
+      position: relative;
+      box-shadow: 0 5px 8px rgba(0,0,0,0.1);
+    }
+
+    .flame {
+      width: 18px;
+      height: 28px;
+      background: radial-gradient(circle, #ffdd77, #ff9f2e);
+      border-radius: 50% 50% 40% 40%;
+      position: absolute;
+      top: -28px;
+      left: 0px;
+      animation: flicker 0.2s infinite alternate;
+      transform-origin: center bottom;
+      box-shadow: 0 0 12px #ffae42;
+    }
+
+    @keyframes flicker {
+      0% { transform: scale(1) translateY(0); opacity: 0.9; width: 16px; height: 26px; }
+      100% { transform: scale(1.1) translateY(-3px); opacity: 1; width: 19px; height: 30px; }
+    }
+
+    .cake-body {
+      background: #e3b27c;
+      width: 180px;
+      height: 65px;
+      border-radius: 20px 20px 12px 12px;
+      margin-top: 3px;
+      position: relative;
+      box-shadow: 0 8px 0 #b97f4b;
+      background: linear-gradient(145deg, #f5bc7a, #e0a166);
+    }
+
+    .cake-layer {
+      background: #d49556;
+      width: 180px;
+      height: 20px;
+      border-radius: 18px 18px 8px 8px;
+      margin-top: -8px;
+      background: #f0bc82;
+    }
+
+    .cake-deco {
+      font-size: 1.3rem;
+      letter-spacing: 5px;
+      margin-top: 6px;
+    }
+
+    .blow-hint {
+      background: #ffe1c6;
+      padding: 8px 16px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: #bb6b3a;
+      margin-top: 15px;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    /* MAGGI LOVER BUTTON - SPECIAL */
+    .maggi-btn {
+      background: linear-gradient(95deg, #e67e22, #d35400, #f39c12);
+      border: none;
+      padding: 16px 28px;
+      border-radius: 60px;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: white;
+      cursor: pointer;
+      margin: 15px 0 10px;
+      transition: 0.2s;
+      box-shadow: 0 9px 0 #a04000;
+      text-shadow: 2px 2px 0 #b64900;
+      letter-spacing: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .maggi-btn:active {
+      transform: translateY(4px);
+      box-shadow: 0 4px 0 #a04000;
+    }
+
+    .party-btn {
+      background: linear-gradient(95deg, #ff7b9c, #ff4d7a);
+      border: none;
+      padding: 12px 32px;
+      border-radius: 60px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      margin: 8px 0;
+      transition: 0.2s;
+      box-shadow: 0 7px 0 #a13355;
+    }
+
+    .party-btn:active {
+      transform: translateY(3px);
+      box-shadow: 0 3px 0 #a13355;
+    }
+
+    .surprise-box {
+      background: #fff0f2;
+      border-radius: 45px;
+      padding: 15px;
+      min-height: 90px;
+      margin: 15px 0;
+      border: 3px dotted #ffb0c3;
+      overflow-y: auto;
+      max-height: 180px;
+    }
+
+    .fun-grid {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 28px 0 20px;
+    }
+
+    .grid-item {
+      background: radial-gradient(circle at 30% 10%, white, #ffe4f0);
+      padding: 10px 8px;
+      border-radius: 50px;
+      text-align: center;
+      width: 95px;
+      cursor: pointer;
+      border: 2px solid #ffbfd5;
+      transition: 0.1s;
+    }
+
+    .grid-item span {
+      font-size: 2.5rem;
+      display: block;
+    }
+
+    .colorful-footer {
+      background: linear-gradient(90deg, #ffe6f0, #ffd9e6);
+      text-align: center;
+      padding: 1rem;
+      font-weight: 600;
+      color: #ba6c8a;
+      border-top: 5px solid #ffd966;
+    }
+
+    @media (max-width: 580px) {
+      .glow-name { font-size: 2.5rem; }
+      .rainbow-header h1 { font-size: 1.5rem; }
+      .cake-body, .cake-layer { width: 150px; }
+      .grid-item { width: 70px; }
+      .maggi-btn { font-size: 1rem; padding: 12px 20px; }
+    }
+
+    /* Maggi noodle burst style */
+    .maggi-piece {
+      position: fixed;
+      font-size: 28px;
+      pointer-events: none;
+      z-index: 10000;
+      animation: maggiFly 1.2s ease-out forwards;
+    }
+
+    @keyframes maggiFly {
+      0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(var(--tx, 100px), var(--ty, -200px)) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="birthday-card">
+  <div class="rainbow-header">
+    <h1>🎉🎂 HAPPY BIRTHDAY 🎂🎉</h1>
+    <div class="name-block">
+      <div class="glow-name">SEHER</div>
+    </div>
+    <div class="date-rainbow">
+      <span>🌟</span> 15th JUNE <span>🎈</span>
+    </div>
+    <div class="sister-tag">
+      👭 My Wonderful Sister & Classmate 👭
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="wish-card">
+      <div class="emoji-rain">✨🍜🎀🌸🎈💖✨</div>
+      <p><strong>To my Maggi-loving sister Seher,</strong><br>
+      You are that sweet sister-like friend who makes every class brighter!<br>
+      On <strong>15th June</strong>, the world celebrates YOU. 🥳<br>
+      May your day be filled with <strong>color, Maggi, cake, and zero stress</strong>.<br>
+      You deserve all the happiness, sister! 💗🍜</p>
+      <div class="money-line-fun">
+        😄💰 "Website ka paisa kon dega?" — It's my colorful Maggi-loaded gift! 💰🍜
+      </div>
+    </div>
+
+    <!-- Cake + candle section -->
+    <div class="cake-zone">
+      <div class="cake-title">🎂 BLOW THE CANDLE 🕯️</div>
+      <div class="cake-container" id="cakeContainer">
+        <div class="cake-canvas">
+          <div class="candle-area" id="candleArea">
+            <div class="candle" id="candleObj">
+              <div class="flame" id="flameObj"></div>
+            </div>
+          </div>
+          <div class="cake-body"></div>
+          <div class="cake-layer"></div>
+          <div class="cake-deco">🎉 🍬 🍫</div>
+        </div>
+      </div>
+      <div class="blow-hint" id="blowHint">💨 Click on the candle flame to blow it! 💨</div>
+    </div>
+
+    <!-- ========== MAGGI LOVER BUTTON - FULL BLOW OF MAGGI ========== -->
+    <div style="text-align: center;">
+      <button class="maggi-btn" id="maggiLoverBtn">
+        🍜🔥 MAGGI LOVER BLAST 🔥🍜
+      </button>
+      <div style="font-size: 0.8rem; color: #d35400; margin-bottom: 8px;">⭐ Click for FULL MAGGI EXPLOSION ⭐</div>
+    </div>
+
+    <!-- Party Surprise button -->
+    <div style="text-align: center;">
+      <button class="party-btn" id="partyButton">🎉🎊 SPARKLE SURPRISE 🎊🎉</button>
+      <div id="surpriseMagicBox" class="surprise-box">
+        💫 Click for confetti & sweet wishes! 💫<br>
+        🍜 And don't forget the MAGGI BUTTON above! 🍜
+      </div>
+    </div>
+
+    <!-- Fun clickable icons -->
+    <div class="fun-grid">
+      <div class="grid-item" data-msg="🍜 Maggi + Birthday = Best combo! 🎉"><span>🍜</span> MAGGI</div>
+      <div class="grid-item" data-msg="🎈 Party all day, Seher! 🎈"><span>🎈</span> BALLOON</div>
+      <div class="grid-item" data-msg="🍰 Yummy cake & Maggi dreams! 🍰"><span>🍰</span> CAKE</div>
+      <div class="grid-item" data-msg="🎁 A big virtual gift just for you! 🎁"><span>🎁</span> GIFT</div>
+      <div class="grid-item" data-msg="👭 Love you, sister from class! 👭"><span>👭</span> SISTER</div>
+    </div>
+
+    <div style="background: #FEF9E6; border-radius: 50px; padding: 16px; text-align: center; border-left: 8px solid #ffb347; border-right: 8px solid #ffb347;">
+      <p>💖 <strong>Seher, you're not just a classmate — you're my Maggi-loving sister by heart!</strong> 💖</p>
+      <p>Stay awesome, keep smiling, and enjoy noodles forever! 🌟🍜</p>
+    </div>
+  </div>
+
+  <div class="colorful-footer">
+    🎨 Made with HEAPS of Maggi & love for Seher | 15th June 🎨<br>
+    ✨ No homework, only Maggi & happiness! ✨
+  </div>
+</div>
+
+<script>
+  // ========== CAKE & CANDLE BLOW FUNCTION ==========
+  const flame = document.getElementById('flameObj');
+  const candleArea = document.getElementById('candleArea');
+  const blowHint = document.getElementById('blowHint');
+  let candleLit = true;
+
+  function blowCandle() {
+    if (!candleLit) return;
+    if (flame) {
+      flame.style.animation = 'none';
+      flame.style.opacity = '0';
+      flame.style.transform = 'scale(0)';
+      flame.style.transition = '0.1s';
+    }
+    candleLit = false;
+    blowHint.innerHTML = "🎉✨ Yay! You blew the candle! Happy Birthday Seher! ✨🎉";
+    blowHint.style.background = "#ffd966";
+    blowHint.style.color = "#a04162";
+    createMiniConfetti(30);
+    addSurpriseMessage("🕯️💨 The candle is blown! May your Maggi-filled wish come true! 🍜💖");
+  }
+
+  function createMiniConfetti(count = 30) {
+    const colors = ['#ffb347', '#ff6b6b', '#6a9eff', '#f9c74f', '#f9844a', '#b5838d', '#e67e22'];
+    for(let i=0;i<count;i++) {
+      const conf = document.createElement('div');
+      conf.style.position = 'fixed';
+      conf.style.width = Math.random()*8+4+'px';
+      conf.style.height = Math.random()*8+4+'px';
+      conf.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
+      conf.style.borderRadius = Math.random()>0.6 ? '50%' : '2px';
+      conf.style.left = (window.innerWidth/2) + (Math.random()-0.5)*120 + 'px';
+      conf.style.top = (window.innerHeight/2) + (Math.random()-0.5)*80 + 'px';
+      conf.style.pointerEvents = 'none';
+      conf.style.zIndex = '9999';
+      document.body.appendChild(conf);
+      setTimeout(() => { if(conf && conf.remove) conf.remove(); }, 800);
+      conf.animate([{ opacity:1, transform:'scale(1)'},{ opacity:0, transform:'scale(0.5) translateY(-50px)' }], { duration:700, easing:'ease-out' });
+    }
+  }
+
+  if (candleArea) candleArea.addEventListener('click', (e) => { e.stopPropagation(); blowCandle(); });
+  if (blowHint) blowHint.addEventListener('click', () => blowCandle());
+
+  // ========== MAGGI LOVER BUTTON - FULL BLOW OF MAGGI ==========
+  const maggiBtn = document.getElementById('maggiLoverBtn');
+  
+  function fullMaggiBlast() {
+    // 1. Create 150+ flying Maggi noodle pieces all over the screen
+    const maggiEmojis = ['🍜', '🍝', '🔥', '✨', '🍲', '🥢', '🌶️', '🧂', '⭐', '🎉'];
+    for (let i = 0; i < 180; i++) {
+      const maggiPiece = document.createElement('div');
+      const randomEmoji = maggiEmojis[Math.floor(Math.random() * maggiEmojis.length)];
+      maggiPiece.innerText = randomEmoji;
+      maggiPiece.classList.add('maggi-piece');
+      const size = Math.random() * 28 + 20;
+      maggiPiece.style.fontSize = size + 'px';
+      maggiPiece.style.left = Math.random() * window.innerWidth + 'px';
+      maggiPiece.style.top = Math.random() * window.innerHeight + 'px';
+      const tx = (Math.random() - 0.5) * 300;
+      const ty = -Math.random() * 250 - 50;
+      maggiPiece.style.setProperty('--tx', tx + 'px');
+      maggiPiece.style.setProperty('--ty', ty + 'px');
+      maggiPiece.style.animationDuration = Math.random() * 1 + 0.8 + 's';
+      document.body.appendChild(maggiPiece);
+      setTimeout(() => { if(maggiPiece && maggiPiece.remove) maggiPiece.remove(); }, 1200);
+    }
+    
+    // 2. Trigger confetti blast + colorful explosion
+    createFullConfetti(150);
+    
+    // 3. Add Maggi-themed surprise messages to the box
+    const maggiMessages = [
+      "🍜🔥 MAGGI EXPLOSION! Seher, you're the Queen of Noodles! 🔥🍜",
+      "🍲💨 FULL BLOW OF MAGGI! Enjoy this noodle tsunami, sister! 🎉🍝",
+      "🥢✨ Happy Birthday Seher! May your life be as spicy & tasty as Maggi! 🌶️🍜",
+      "🍜🎂 Maggi + Cake = Ultimate Birthday Combo! Love you sister! 💖",
+      "🔥🍲 BOOM! 2-minute noodles, lifetime happiness! Happy 15th June! 🎈🍜",
+      "🍜💥 Maggi lover alert! Seher, you just got a noodle storm! 🌪️🍝"
+    ];
+    for (let msg of maggiMessages) {
+      addSurpriseMessage(msg);
+    }
+    addSurpriseMessage("🎉🍜 SEHER, HAPPY BIRTHDAY! MAY YOUR MAGGI ALWAYS BE PERFECTLY COOKED! 🍜🎉");
+    
+    // 4. Add floating Maggi background noodles for fun
+    for (let i = 0; i < 25; i++) {
+      setTimeout(() => {
+        const floatMaggi = document.createElement('div');
+        floatMaggi.innerText = '🍜';
+        floatMaggi.style.position = 'fixed';
+        floatMaggi.style.left = Math.random() * 100 + '%';
+        floatMaggi.style.bottom = '-30px';
+        floatMaggi.style.fontSize = Math.random() * 30 + 20 + 'px';
+        floatMaggi.style.pointerEvents = 'none';
+        floatMaggi.style.zIndex = '999';
+        floatMaggi.style.animation = 'riseNoodle 3s linear forwards';
+        document.body.appendChild(floatMaggi);
+        setTimeout(() => { if(floatMaggi) floatMaggi.remove(); }, 3000);
+      }, i * 80);
+    }
+  }
+  
+  function createFullConfetti(count) {
+    const colors = ['#ff4d6d', '#ffb347', '#6a4e9b', '#4c9f70', '#ff6ac4', '#3b9eff', '#f9c74f', '#f9844a', '#e67e22', '#d35400'];
+    for (let i = 0; i < count; i++) {
+      const conf = document.createElement('div');
+      conf.style.position = 'fixed';
+      conf.style.width = Math.random() * 12 + 6 + 'px';
+      conf.style.height = Math.random() * 14 + 6 + 'px';
+      conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      conf.style.borderRadius = Math.random() > 0.6 ? '50%' : '3px';
+      conf.style.left = Math.random() * window.innerWidth + 'px';
+      conf.style.top = '-40px';
+      conf.style.pointerEvents = 'none';
+      conf.style.zIndex = '9999';
+      document.body.appendChild(conf);
+      const fallDuration = Math.random() * 1.8 + 1;
+      const xMove = (Math.random() - 0.5) * 200;
+      conf.animate([
+        { transform: `translate(0, 0) rotate(0deg)`, opacity: 1 },
+        { transform: `translate(${xMove}px, ${window.innerHeight + 80}px) rotate(${Math.random() * 500}deg)`, opacity: 0 }
+      ], { duration: fallDuration * 900, easing: 'cubic-bezier(0.2,0.9,0.4,1)', fill: 'forwards' });
+      setTimeout(() => { if(conf && conf.remove) conf.remove(); }, fallDuration * 1000);
+    }
+  }
+  
+  function addSurpriseMessage(msg) {
+    const surpriseBox = document.getElementById('surpriseMagicBox');
+    const msgDiv = document.createElement('div');
+    msgDiv.style.background = "#fff0d6";
+    msgDiv.style.padding = "8px 12px";
+    msgDiv.style.borderRadius = "40px";
+    msgDiv.style.margin = "6px 0";
+    msgDiv.style.fontWeight = "bold";
+    msgDiv.style.border = "1px solid #ffa559";
+    msgDiv.style.fontSize = "0.9rem";
+    msgDiv.innerHTML = `🍜✨ ${msg} ✨🍜`;
+    surpriseBox.appendChild(msgDiv);
+    while(surpriseBox.children.length > 8) {
+      surpriseBox.removeChild(surpriseBox.firstChild);
+    }
+  }
+  
+  maggiBtn.addEventListener('click', fullMaggiBlast);
+  
+  // ========== PARTY BUTTON (regular confetti + wishes) ==========
+  const partyBtn = document.getElementById('partyButton');
+  const surpriseBox = document.getElementById('surpriseMagicBox');
+  const funWishes = [
+    "🎉🌈 BOOM! Confetti for Seher! You're a rainbow star! 🌈🎉",
+    "🎂🍭 15th June = Sweetest day ever! Enjoy, sister! 🍭🎂",
+    "💖✨ You light up the classroom, Seher! ✨💖",
+    "🎈🎊 Party hard, eat cake, repeat! Happy Birthday! 🎊🎈",
+    "🌸👭 Sending you colorful hugs! Keep shining! 👭🌸",
+    "🎁📚 Best classmate + sister = YOU! 📚🎁"
+  ];
+  
+  function createRegularConfetti() {
+    const colors = ['#ff4d6d', '#ffb347', '#6a4e9b', '#4c9f70', '#ff6ac4', '#3b9eff', '#f9c74f'];
+    for (let i = 0; i < 80; i++) {
+      const conf = document.createElement('div');
+      conf.style.position = 'fixed';
+      conf.style.width = Math.random() * 10 + 5 + 'px';
+      conf.style.height = Math.random() * 12 + 5 + 'px';
+      conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      conf.style.borderRadius = Math.random() > 0.7 ? '50%' : '2px';
+      conf.style.left = Math.random() * window.innerWidth + 'px';
+      conf.style.top = '-30px';
+      conf.style.pointerEvents = 'none';
+      conf.style.zIndex = '9999';
+      document.body.appendChild(conf);
+      const fallDuration = Math.random() * 1.5 + 1;
+      const xMove = (Math.random() - 0.5) * 100;
+      conf.animate([
+        { transform: `translate(0, 0) rotate(0deg)`, opacity: 0.9 },
+        { transform: `translate(${xMove}px, ${window.innerHeight + 50}px) rotate(${Math.random() * 400}deg)`, opacity: 0 }
+      ], { duration: fallDuration * 900, easing: 'cubic-bezier(0.3,0.8,0.5,1)', fill: 'forwards' });
+      setTimeout(() => { if(conf && conf.remove) conf.remove(); }, fallDuration * 1000);
+    }
+  }
+  
+  partyBtn.addEventListener('click', () => {
+    createRegularConfetti();
+    const randomMsg = funWishes[Math.floor(Math.random() * funWishes.length)];
+    const newDiv = document.createElement('div');
+    newDiv.style.background = "#fff1d6";
+    newDiv.style.padding = "10px";
+    newDiv.style.borderRadius = "50px";
+    newDiv.style.fontWeight = "bold";
+    newDiv.style.border = "2px solid #ffb17a";
+    newDiv.innerHTML = `🎉✨ ${randomMsg} ✨🎉`;
+    surpriseBox.appendChild(newDiv);
+    while (surpriseBox.children.length > 8) surpriseBox.removeChild(surpriseBox.firstChild);
+  });
+  
+  // grid items click
+  const gridItems = document.querySelectorAll('.grid-item');
+  gridItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const msg = item.getAttribute('data-msg') || "💗 Happy Birthday, Seher! 💗";
+      addSurpriseMessage(msg);
+    });
+  });
+  
+  // floating background maggi noodles generator
+  function createFloatingMaggiBg() {
+    const maggiBg = document.createElement('div');
+    maggiBg.classList.add('maggi-noodle');
+    maggiBg.innerText = ['🍜', '🍝', '🥢', '🔥'][Math.floor(Math.random()*4)];
+    maggiBg.style.left = Math.random() * 100 + '%';
+    maggiBg.style.fontSize = Math.random() * 30 + 20 + 'px';
+    maggiBg.style.animationDuration = Math.random() * 6 + 5 + 's';
+    document.body.appendChild(maggiBg);
+    setTimeout(() => { if(maggiBg && maggiBg.remove) maggiBg.remove(); }, 11000);
+  }
+  setInterval(createFloatingMaggiBg, 1000);
+  
+  window.addEventListener('load', () => {
+    createRegularConfetti();
+    addSurpriseMessage("🎉🎂 WELCOME SEHER! BLOW THE CANDLE & HIT THE MAGGI BUTTON! 🍜🔥");
+  });
+</script>
+</body>
+  </html>
